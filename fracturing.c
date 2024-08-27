@@ -26,13 +26,11 @@ double calculate_height();
 
 int main(int argc, char **argv)
 {
-    int choice;
-    
-    scanf("%d", &choice);
-
-
-
-
+    calculate_distance();
+    calculate_perimeter();
+    calculate_area();
+    calculate_width();
+    calculate_height();
     
     return 1;
 } // main
@@ -51,11 +49,17 @@ double calculate_distance()
     double x1, y1, x2, y2;
     double distance;
 
-    printf("Enter the x and y coordinates of the first point: ");
-    scanf("%lf %lf", &x1, &y1);
+    printf("Enter the x coordinate of the first point: ");
+    scanf("%lf", &x1);
 
-    printf("Enter the x and y coordinates of the second point: ");
-    scanf("%lf %lf", &x2, &y2);
+    printf("Enter the y coordinate of the first point: ");
+    scanf("%lf", &y1);
+
+    printf("Enter the x coordinate of the second point: ");
+    scanf("%lf", &x2);
+
+    printf("Enter the y coordinate of the second point: ");
+    scanf("%lf", &y2);
 
     // Calculate the distance between two points
 

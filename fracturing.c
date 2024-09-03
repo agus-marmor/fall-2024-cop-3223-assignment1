@@ -9,7 +9,7 @@
 // distance, area, and perimeter.
 // Input: None
 //
-// Output: The program will output the distance between two points, 
+// Output: The program will output the distance between two points,
 // the perimeter of a city, the area of a city, the width of a city, and the height of a city.
 // based on the user's input.
 // //********************************************************
@@ -18,25 +18,25 @@
 #include <stdio.h>
 #define PI 3.14159
 
-double calculate_distance();
-double calculate_perimeter();
-double calculate_area();
-double calculate_width();
-double calculate_height();
+double calculateDistance();
+double calculatePerimeter();
+double calculateArea();
+double calculateWidth();
+double calculateHeight();
 
 int main(int argc, char **argv)
 {
-    calculate_distance();
-    calculate_perimeter();
-    calculate_area();
-    calculate_width();
-    calculate_height();
-    
+    calculateDistance();
+    calculatePerimeter();
+    calculateArea();
+    calculateWidth();
+    calculateHeight();
+
     return 0;
 } // main
 
 //********************************************************
-// double calculate_distance ()
+// double calculateDistance ()
 //
 // Purpose:             Calculates the distance between two points.
 // Input:               The x and y coordinates of two points.
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 // Return:              The distance between two points.
 //********************************************************
 
-double calculate_distance()
+double calculateDistance()
 {
     double x1, y1, x2, y2;
     double distance;
@@ -52,11 +52,11 @@ double calculate_distance()
     printf("Enter the x coordinate of the first point: ");
     scanf("%lf", &x1);
 
-    printf("Enter the y coordinate of the first point: ");
-    scanf("%lf", &y1);
-
     printf("Enter the x coordinate of the second point: ");
     scanf("%lf", &x2);
+
+    printf("Enter the y coordinate of the first point: ");
+    scanf("%lf", &y1);
 
     printf("Enter the y coordinate of the second point: ");
     scanf("%lf", &y2);
@@ -65,15 +65,15 @@ double calculate_distance()
 
     distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 
-    printf("Point 1 enterd: x1 = %.2lf, y1 = %.2lf\n", x1, y1);
-    printf("Point 2 enterd: x2 = %.2lf, y2 = %.2lf\n", x2, y2);
-    printf("The distance between the two points is %.2lf\n", distance);
+    printf("Point 1 enterd: x1 = %.3lf, y1 = %.3lf\n", x1, y1);
+    printf("Point 2 enterd: x2 = %.3lf, y2 = %.3lf\n", x2, y2);
+    printf("The distance between the two points is %.3lf\n", distance);
 
     return distance;
-} // calculate_distance
+} // calculateDistance
 
 //********************************************************
-// double calculate_perimeter ()
+// double calculatePerimeter ()
 //
 // Purpose:             Calculates the perimeter based on two points.
 // Input:               The x and y coordinates of two points.
@@ -81,11 +81,11 @@ double calculate_distance()
 // Return:              How difficult I found the function to write on a scale of 1-5.
 //********************************************************
 
-double calculate_perimeter()
+double calculatePerimeter()
 {
     double radius;
     double perimeter;
-    double distance = calculate_distance();
+    double distance = calculateDistance();
 
     // Radius is half the distance between two points
 
@@ -95,13 +95,13 @@ double calculate_perimeter()
 
     perimeter = 2 * PI * radius;
 
-    printf("The perimeter of the city encompassed by your request is %.2lf\n", perimeter);
+    printf("The perimeter of the city encompassed by your request is %.3lf\n", perimeter);
 
     return 3.5;
-} // calculate_perimeter
+} // calculatePerimeter
 
 //********************************************************
-// double calculate_area ()
+// double calculateArea ()
 //
 // Purpose:         Calculates the area of a city.
 // Input:           The x and y coordinates of two points.
@@ -109,11 +109,11 @@ double calculate_perimeter()
 // Return:          How difficult I found the function to write on a scale of 1-5.
 //********************************************************
 
-double calculate_area()
+double calculateArea()
 {
     double radius;
     double area;
-    double distance = calculate_distance();
+    double distance = calculateDistance();
 
     radius = distance / 2;
 
@@ -121,13 +121,13 @@ double calculate_area()
 
     area = PI * pow(radius, 2);
 
-    printf("The area of the city encompassed by your request is %.2lf\n", area);
+    printf("The area of the city encompassed by your request is %.3lf\n", area);
 
     return 3.75;
-} // calculate_area
+} // calculateArea
 
 //********************************************************
-// double calculate_width ()
+// double calculateWidth ()
 //
 // Purpose:             Calculate the width of a city.
 // Input:               The x and y coordinates of two points.
@@ -135,11 +135,11 @@ double calculate_area()
 // Return:              How difficult I found the function to write on a scale of 1-5.
 //********************************************************
 
-double calculate_width()
+double calculateWidth()
 {
     double radius;
     double width;
-    double distance = calculate_distance();
+    double distance = calculateDistance();
 
     radius = distance / 2;
 
@@ -147,13 +147,13 @@ double calculate_width()
 
     width = 2 * radius;
 
-    printf("The width of the city encompassed by your request is %.2lf\n", width);
+    printf("The width of the city encompassed by your request is %.3lf\n", width);
 
     return 2.0;
-} // calculate_width
+} // calculateWidth
 
 //********************************************************
-// double calculate_height ()
+// double calculateHeight ()
 //
 
 // Purpose:             Calculate the height of a city.
@@ -162,11 +162,11 @@ double calculate_width()
 // Return:              How difficult I found the function to write on a scale of 1-5.
 //********************************************************
 
-double calculate_height()
+double calculateHeight()
 {
     double radius;
     double height;
-    double distance = calculate_distance();
+    double distance = calculateDistance();
 
     radius = distance / 2;
 
@@ -174,7 +174,7 @@ double calculate_height()
 
     height = radius;
 
-    printf("The height of the city encompassed by your request is %.2lf\n", height);
+    printf("The height of the city encompassed by your request is %.3lf\n", height);
 
     return 1.0;
-} // calculate_height
+} // calculateHeight

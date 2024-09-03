@@ -164,15 +164,12 @@ double calculateWidth()
 
 double calculateHeight()
 {
-    double radius;
     double height;
     double distance = calculateDistance();
 
-    radius = distance / 2;
+    // height is equal to the distance between two points
 
-    // Since the radius of a circle indicates the distance between the center point to any direction, the height is equal to the radius
-
-    height = radius;
+    height = distance;
 
     printf("The height of the city encompassed by your request is %.3lf\n", height);
 

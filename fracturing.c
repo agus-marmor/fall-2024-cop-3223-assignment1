@@ -23,6 +23,7 @@ double calculatePerimeter();
 double calculateArea();
 double calculateWidth();
 double calculateHeight();
+double getDistance();
 
 int main(int argc, char **argv)
 {
@@ -36,20 +37,17 @@ int main(int argc, char **argv)
 } // main
 
 //********************************************************
-// double calculateDistance ()
+// double getDistance ()
 //
-// Purpose:             Calculates the distance between two points.
+// Purpose:             Gets the distance between two points.
 // Input:               The x and y coordinates of two points.
-// Output:              Prints the points entered and the distance between two points.
+// Output:              None
 // Return:              The distance between two points.
 //********************************************************
 
-double calculateDistance()
+double getDistance()
 {
-    static int isHelperFunction = 0;
     double x1, y1, x2, y2;
-    double distance;
-
     printf("Enter the x coordinate of the first point: ");
     scanf("%lf", &x1);
 
@@ -62,20 +60,28 @@ double calculateDistance()
     printf("Enter the y coordinate of the second point: ");
     scanf("%lf", &y2);
 
-    // Calculate the distance between two points
 
-    distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+    printf("Point #1  entered: x1 = %.3lf; y1 = %.3lf\n", x1, y1);
+    printf("Point #2  entered: x2 = %.3lf; y2 = %.3lf\n", x2, y2);
 
-    printf("Point 1 enterd: x1 = %.3lf, y1 = %.3lf\n", x1, y1);
-    printf("Point 2 enterd: x2 = %.3lf, y2 = %.3lf\n", x2, y2);
+    
+    return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+} // getDistance
 
+//********************************************************
+// double calculateDistance ()
+//
+// Purpose:             Calculates the distance between two points.
+// Input:               The x and y coordinates of two points.
+// Output:              Prints the points entered and the distance between two points.
+// Return:              The distance between two points.
+//********************************************************
 
-    // If it is the first call, print the distance between the two points (Not being used as a helper function)
-    if (!isHelperFunction)
-    {
-        printf("The distance between the two points is %.3lf\n", distance);
-        isHelperFunction = 1;
-    }
+double calculateDistance()
+{
+    double distance = getDistance();
+
+    printf("The distance between the two points is %.3lf\n", distance);
 
     return distance;
 } // calculateDistance
@@ -93,7 +99,7 @@ double calculatePerimeter()
 {
     double radius;
     double perimeter;
-    double distance = calculateDistance();
+    double distance = getDistance();
 
     // Radius is half the distance between two points
 
@@ -121,7 +127,7 @@ double calculateArea()
 {
     double radius;
     double area;
-    double distance = calculateDistance();
+    double distance = getDistance();
 
     radius = distance / 2;
 
@@ -147,7 +153,7 @@ double calculateWidth()
 {
     double radius;
     double width;
-    double distance = calculateDistance();
+    double distance = getDistance();
 
     radius = distance / 2;
 
@@ -173,7 +179,7 @@ double calculateWidth()
 double calculateHeight()
 {
     double height;
-    double distance = calculateDistance();
+    double distance = getDistance();
 
     // height is equal to the distance between two points
 

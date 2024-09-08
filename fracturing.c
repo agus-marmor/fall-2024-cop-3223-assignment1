@@ -46,6 +46,7 @@ int main(int argc, char **argv)
 
 double calculateDistance()
 {
+    static int isHelperFunction = 0;
     double x1, y1, x2, y2;
     double distance;
 
@@ -67,7 +68,14 @@ double calculateDistance()
 
     printf("Point 1 enterd: x1 = %.3lf, y1 = %.3lf\n", x1, y1);
     printf("Point 2 enterd: x2 = %.3lf, y2 = %.3lf\n", x2, y2);
-    printf("The distance between the two points is %.3lf\n", distance);
+
+
+    // If it is the first call, print the distance between the two points (Not being used as a helper function)
+    if (!isHelperFunction)
+    {
+        printf("The distance between the two points is %.3lf\n", distance);
+        isHelperFunction = 1;
+    }
 
     return distance;
 } // calculateDistance
